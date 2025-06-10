@@ -1,0 +1,40 @@
+.mat-toolbar {
+  display: flex; // Asegura que los elementos se posicionen con flexbox
+  align-items: center; // Centra verticalmente los elementos
+  padding: 0 16px; // Padding horizontal
+}
+
+.app-title {
+  font-size: 1.25rem; // Tamaño de fuente para el título
+  font-weight: 500; // Peso de la fuente
+  letter-spacing: 0.05em; // Espaciado entre letras
+  margin-right: 20px; // Espacio a la derecha del título
+}
+
+.spacer {
+  flex: 1 1 auto; // Esta es la clave para empujar los elementos a la derecha
+  // Ocupa todo el espacio disponible.
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 8px; // Espacio entre el ícono, el nombre de usuario y el botón
+  color: white; // Color del texto del usuario
+  font-size: 0.95rem;
+}
+
+.username {
+  // Estilos adicionales para el nombre de usuario si es necesario
+  font-weight: 400;
+}
+
+// Estilos para el botón de iniciar sesión si el usuario no está logueado
+.mat-button {
+  color: white; // Color del texto del botón
+}
+
+// Estilos para el ícono de cerrar sesión
+button.mat-icon-button {
+  color: white; // Color del ícono del botón
+}

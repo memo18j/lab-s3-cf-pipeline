@@ -1,0 +1,55 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Iniciar Sesión</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="login-form" [formGroup]="loginForm">
+        <mat-form-field appearance="outline" class="full-width-input">
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="Ingresa tu usuario" formControlName="username" required />
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width-input">
+          <mat-label>Contraseña</mat-label>
+          <input
+            matInput
+            [type]="hidePassword ? 'password' : 'text'"
+            placeholder="Ingresa tu contraseña"
+            formControlName="password"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hidePassword = !hidePassword"
+            [attr.aria-label]="'Ocultar contraseña'"
+            [attr.aria-pressed]="hidePassword"
+          >
+            <mat-icon>{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+          <a (click)="goToRegister()" class="forgot-password-link">Registrarse</a>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="full-width-button">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="full-width-button"
+        (click)="onSubmit()"
+        [disabled]="loginForm.invalid"
+      >
+        Ingresar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span class="app-title">AppCognit</span>
+
+  <span class="spacer"></span>
+
+  <div *ngIf="isLoggedIn; else loginPrompt" class="user-section">
+    <mat-icon>account_circle</mat-icon>
+    <span class="username">{{ userProfile()?.email }}</span>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+
+  <ng-template #loginPrompt>
+    <button mat-button routerLink="/">Iniciar Sesión</button>
+  </ng-template>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
